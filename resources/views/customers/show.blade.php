@@ -98,7 +98,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form method="POST" action="{{route('loans.store')}}" autocomplete="off">
+        <form method="POST" action="/loans/" autocomplete="off">
           @csrf
                 <div class="card-body">
                   <input type="hidden" name="customer_id" value="{{$customer->id}}">
