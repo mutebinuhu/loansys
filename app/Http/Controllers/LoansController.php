@@ -40,7 +40,7 @@ class LoansController extends Controller
         ]);
 
         Alert::success('Success', 'Loan added');
-        return redirect()->back();
+        return back();
 
     }
 }
