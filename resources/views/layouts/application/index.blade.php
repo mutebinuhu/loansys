@@ -65,7 +65,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form method="POST" action="{{route('customers.store')}}">
+        <form method="POST" action="/customers">
           @csrf
 
                 <div class="card-body">
