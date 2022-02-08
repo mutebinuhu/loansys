@@ -11,11 +11,7 @@ class LoansController extends Controller
     //
     public function index(Request $request){
         $loans = DB::table('loans')->get();
-        if($request->ajax()){
-            return DataTables::of($loans)
-            ->addIndexColumn()
-            ->make(true);
-        }
+        
         return view('loans.index', ['loans'=>$loans]);
     }
     public function store(Request $request){
