@@ -12,7 +12,7 @@
   <!-- Ionicons -->
   <link rel="stylesheet" href="{{URL::asset('icons/ionicons.min.css')}}">
   <!-- Tempusdominus Bootstrap 4 -->
-  <link rel="stylesheet" href="{{URL::asset('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')}}">
+  <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css'">
   <!-- iCheck -->
   <link rel="stylesheet" href="{{URL::asset('plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
   <!-- JQVMap -->
