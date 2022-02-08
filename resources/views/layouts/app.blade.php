@@ -173,9 +173,9 @@
 
 
 			<!-- jQuery -->
-<script src="{{URL::asset('plugins/jquery/jquery.min.js')}}"></script>
+<script src="/plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
-<script src="{{URL::asset('plugins/jquery-ui/jquery-ui.min.js')}}"></script>
+<script src="/plugins/jquery-ui/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
 
