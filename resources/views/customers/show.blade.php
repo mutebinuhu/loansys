@@ -50,7 +50,7 @@
                     <div class="card">
                      <div class="card-body">
                         <div class="card-header d-flex justify-content-between py-2 px-2">
-                          <h2 class="">PAYMENT DATES</h2>
+                          <h4 class="">PAYMENT DATES FOR LOAN GIVEN ON <strong>{{$loan->created_at}}</strong></h4>
                         </div>
                           <?php
                             /*calculate the load payment period*/
