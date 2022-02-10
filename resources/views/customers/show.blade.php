@@ -3,6 +3,11 @@
 		<div class="row">
     
 		<div class="col-md-6">
+        @if(session('status'))
+                <div class="alert alert-success errors">{{session('status')}}</div>
+
+            @endif
+
       @if($errors->any())
         @foreach($errors->all() as $error)
           <div class="alert alert-danger errors">
@@ -10,8 +15,6 @@
           </div>
         @endforeach
       @endif
-  
-       
             <!-- Profile Image -->
             <div class="card card-primary card-outline">
               <div class="card-body box-profile">
@@ -41,11 +44,6 @@
                       <p><strong>Loan Start Date: </strong> {{$loan->loan_start_date}}</p>
                       <p><strong>Loan End Date: </strong> {{$loan->loan_end_date}}</p>
                       <p><strong>Loan Term: </strong> {{$loan->loan_term}} Month(s)</p>
-
-
-
-
-
                     </div>
                     <div class="card">
                      <div class="card-body">

@@ -39,8 +39,8 @@ class LoansController extends Controller
             'loan_start_date'=>$request->loan_start_date
         ]);
 
-        Alert::success('Success', 'Loan added');
-        return redirect()->back();
+       
+        return redirect()->back()->with('status', 'Loan created');
 
     }
 }

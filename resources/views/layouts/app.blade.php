@@ -25,7 +25,7 @@
   <link rel="stylesheet" href="/plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="/plugins/summernote/summernote-bs4.min.css">
-<script src="js/application.js"></script>
+<script src="/js/application.js"></script>
 
   
 
@@ -41,7 +41,7 @@
   </div>
   @include('layouts.components.nav')
   @include('layouts.components.sidebar')
-  @include('sweetalert::alert')
+
 	<!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -234,10 +234,10 @@
         columns: [
             {data: 'DT_RowIndex', name: 'DT_RowIndex'},
             {data: 'name', name: 'name'},
-            {data: 'email', phone: 'phone'},
+            {data: 'email', email: 'phone'},
             {data: 'action', name: 'action', orderable: false, searchable: false},
         ]
-    });
+  });
     
   });
 </script>
