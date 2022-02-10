@@ -31,12 +31,27 @@
                   @foreach($customer->loans as $loan)
                 <ul class="list-group list-group-unbordered mb-3">
                   <li class="list-group-item">
-                    <b>{{$loan->created_at}}</b> <a class="float-right">{{$loan->loan_amount}}</a>
                     <div>
-                      <div class="d-flex justify-content-between py-2 bg-success px-2">
-                        <h5 class="">Payment Dates</h5>
-                        <h5 class="">Accept Payment</h5>
-                      </div>
+                      <h2>LOAN DETAILS</h2>
+                      <p><strong>Loan Amount: </strong> <span class="text-lg">{{$loan->loan_amount}}</span>/=</p>
+                      <p><strong>Loan Interest Rate: </strong> {{$loan->loan_interest_rate}} %</p>
+                      <p><strong>Loan Date: </strong> {{$loan->created_at}}</p>
+                      <p><strong>Payment per month: </strong> {{$loan->payment_per_month}}/=</p>
+                      <p><strong>Expected Amount: </strong> {{$loan->expected_amount}}/=</p>
+                      <p><strong>Loan Start Date: </strong> {{$loan->loan_start_date}}</p>
+                      <p><strong>Loan End Date: </strong> {{$loan->loan_end_date}}</p>
+                      <p><strong>Loan Term: </strong> {{$loan->loan_term}} Month(s)</p>
+
+
+
+
+
+                    </div>
+                    <div class="card">
+                     <div class="card-body">
+                        <div class="card-header d-flex justify-content-between py-2 px-2">
+                          <h2 class="">PAYMENT DATES</h2>
+                        </div>
                           <?php
                             /*calculate the load payment period*/
                            
@@ -66,11 +81,12 @@
                            ?>
                       
                     </div>
+                     </div>
                   </li>
                  
 
                 </ul>
-               
+
 
                   @endforeach
 
