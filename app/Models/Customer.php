@@ -16,4 +16,9 @@ class Customer extends Model
     public function loans(){
         return $this->hasMany(Loan::class);
     }
+
+   //return total customers
+   static public function countUsers(){
+        echo Customer::all()->count();
+    }
 }

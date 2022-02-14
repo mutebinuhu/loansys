@@ -71,9 +71,17 @@
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>20</h3>
+                <h3 class="customer-total">
 
-                <p>Users</p>
+                  @php
+                    use App\Models\Customer;
+                    use App\Models\Loan;
+                    Customer::countUsers();
+                  @endphp
+
+                </h3>
+
+                <p>Customers</p>
               </div>
               <div class="icon">
                 <i class="far fa-user"></i>
@@ -86,9 +94,9 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>53<sup style="font-size: 20px">%</sup></h3>
+                <h3 class="">{{Loan::countLoans();}}<sup style="font-size: 20px"></sup></h3>
 
-                <p>Defaults</p>
+                <p>Loans</p>
               </div>
               <div class="icon">
                 <i class="far fa-times"></i>

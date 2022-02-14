@@ -17,6 +17,20 @@
       @endif
             <!-- Profile Image -->
             <div class="card card-primary card-outline">
+             <div class="d-flex justify-content-between">
+               <form method="POST" action="{{route('customers.destroy', $customer->id)}}" onclick="test()" id="delete-form">
+                @csrf
+                @method('DELETE')
+                  <div class="icon px-2 py-2 text-danger">
+                <i class="fas fa-trash-alt"></i>
+              </div>
+               </form>
+              <a href="/{{$customer->id}}">
+                <div class="icon px-2 py-2 text-info">
+                <i class="far fa-edit"></i>
+              </div>
+              </a>
+             </div>
               <div class="card-body box-profile">
                 <div class="text-center">
                   <img class="profile-user-img img-fluid img-circle" src="../../dist/img/user4-128x128.jpg" alt="User profile picture">
@@ -25,11 +39,13 @@
                 <h3 class="profile-username text-center">{{$customer->email}}</h3>
 
                 <p class="text-muted text-center">{{$customer->location}}</p>
-                <h3>Previous Loans</h3>
                   <?php 
                         use Carbon\Carbon;
                         use Carbon\CarbonPeriod;
                    ?>
+                <p class="text-muted text-center">Member Since: {{Carbon::parse($customer->created_at)->format('Y-m-d')}}</p>
+                <h3>Previous Loans</h3>
+               
 
                   @foreach($customer->loans as $loan)
                 <ul class="list-group list-group-unbordered mb-3">

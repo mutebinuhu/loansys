@@ -20,5 +20,10 @@ window.addEventListener('DOMContentLoaded', ()=>{
 
 	}, 3000);
 
-	
+	const customerCount = document.querySelector('.customer-total');
+
+	const getForm = document.querySelector("#delete-form");
+	getForm.addEventListener("click", ()=>{
+		getForm.submit();
+	})
 });

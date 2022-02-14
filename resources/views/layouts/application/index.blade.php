@@ -9,6 +9,9 @@
                                 {{session()->get('message')}}
                           </div>
                     @endif 
+
+                     
+
                      @yield('content')
                      @if($errors->any())
                      <div class="col-4 " id="errors">

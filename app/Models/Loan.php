@@ -12,4 +12,8 @@ class Loan extends Model
     protected $fillable = [
         'customer_id', 'loan_amount', 'loan_term', 'expected_amount', 'loan_interest_rate', 'payment_per_month', 'loan_end_date', 'loan_start_date'
     ];
+
+    static public function countLoans(){
+        echo Loan::all()->count();
+    }
 }
