@@ -71,7 +71,7 @@ class CustomersController extends Controller
 
         ]);
         Alert::success('Success', 'Customer Successfully Registered');
-        return redirect()->back();
+        return redirect()->back()->with('message', 'Customer Successfully Registered' );
 
     }
 
