@@ -25,7 +25,7 @@
                 <i class="fas fa-trash-alt"></i>
               </div>
                </form>
-              <a href="/{{$customer->id}}">
+              <a href="#">
                 <div class="icon px-2 py-2 text-info">
                 <i class="far fa-edit"></i>
               </div>
@@ -44,7 +44,10 @@
                         use Carbon\CarbonPeriod;
                    ?>
                 <p class="text-muted text-center">Member Since: {{Carbon::parse($customer->created_at)->format('Y-m-d')}}</p>
-                <h3>Previous Loans</h3>
+                <div class="d-flex justify-content-between">
+                    <h3>Previous Loans</h3>
+                    <a href="#" class="btn btn-primary mb-2" data-toggle="modal" data-target="#exampleModalCenter" ><b>Add Loan</b><i class="fas fa-plus px-2"></i></a>
+                  </div>
                
 
                   @foreach($customer->loans as $loan)
@@ -105,7 +108,6 @@
                   @endforeach
 
 
-                <a href="#" class="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModalCenter" ><b>Add Loan</b></a>
               </div>
               <!-- /.card-body -->
             </div>
