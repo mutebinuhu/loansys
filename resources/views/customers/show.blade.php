@@ -18,7 +18,14 @@
             <!-- Profile Image -->
             <div class="card card-primary card-outline">
              <div class="d-flex justify-content-between">
-              <a href="#">
+               <form method="POST" action="{{route('customers.destroy', $customer->id)}}"  id="delete-form">
+                @csrf
+                @method('DELETE')
+                  <div class="icon px-2 py-2 text-danger">
+                <i class="fas fa-trash-alt"></i>
+              </div>
+               </form>
+              <a href="/{{$customer->id}}">
                 <div class="icon px-2 py-2 text-info">
                 <i class="far fa-edit"></i>
               </div>
