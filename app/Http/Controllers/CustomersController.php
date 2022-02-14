@@ -25,7 +25,12 @@ class CustomersController extends Controller
                     ->addIndexColumn()
                     ->addColumn('action', function($row){
 
-                        $btn = '<a href="customers/'.$row->id.'" class="btn btn-xs btn-primary"><i class="fas fa-eye"></i> View </a>';
+                        $btn = '<div class="d-flex justify-content-between">'.
+                            '<a href="customers/'.$row->id.'" class="btn btn-xs btn-primary mx-2"><i class="fas fa-eye"></i> View </a>'.
+
+                        '<a href="customers/'.$row->id.'" class="btn btn-xs btn-danger"><i class="fas fa-trash-alt"></i> Delete </a>'
+                        .'</div>';
+
                         return $btn;
                     })
                     ->rawColumns(['action'])
