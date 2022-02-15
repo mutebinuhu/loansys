@@ -99,7 +99,7 @@
                 <p>Loans</p>
               </div>
               <div class="icon">
-                <i class="far fa-times"></i>
+                  <i class="far fa-handshake"></i>
               </div>
               <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -114,7 +114,7 @@
                 <p>Loans</p>
               </div>
               <div class="icon">
-                <i class="ion ion-person-add"></i>
+                <i class="fas fa-handshake"></i>
               </div>
               <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>

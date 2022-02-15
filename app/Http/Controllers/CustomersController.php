@@ -25,11 +25,9 @@ class CustomersController extends Controller
                     ->addIndexColumn()
                     ->addColumn('action', function($row){
 
-                        $btn = '<div class="d-flex justify-content-between">'.
-                            '<a href="customers/'.$row->id.'" class="btn btn-xs btn-primary mx-2"><i class="fas fa-eye"></i> View </a>'.
+                        $btn =  '<a href="customers/'.$row->id.'" class="btn btn-xs btn-primary mx-2"><i class="fas fa-eye"></i> View </a>';
 
-                        '<a href="customers/'.$row->id.'" class="btn btn-xs btn-danger"><i class="fas fa-trash-alt"></i> Delete </a>'
-                        .'</div>';
+                 
 
                         return $btn;
                     })
@@ -108,6 +106,21 @@ class CustomersController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $customer = Customer::find($id);
+        $validatedData = $request->validate([
+                'name'=>'required',
+                'location'=>'required',
+                'phone'=>'required'
+        ]);
+        $customer->name = $request->name;
+        $customer->location = $request->location;
+        $customer->phone = $request->phone;
+        $customer->email = $request->email;
+
+        $customer->save();
+        return back()->with('message', 'Customer Updated');
+
+
     }
 
     /**

@@ -11,7 +11,9 @@ class LoansController extends Controller
     //
     public function index(Request $request){
         $loans = DB::table('loans')->get();
-        
+        if($requset->ajax()){
+            
+        }
         return view('loans.index', ['loans'=>$loans]);
     }
     public function store(Request $request){
