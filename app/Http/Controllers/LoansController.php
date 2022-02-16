@@ -24,9 +24,9 @@ class LoansController extends Controller
             'loan_start_date'=>'required'
         ]);
 
-        $dt = Carbon::now()
+        $dt = Carbon::now();
         //get the end date and remove the last month;
-        $end_loan_date = $dt->addMonth($request->loan_term - 1);
+        $end_loan_date = $dt->addMonth($request->loan_term);
         //dd($nextdate);
         $expected_amount = ($request->loan_interest_rate / 100) * ($request->loan_amount) + $request->loan_amount;
         $payment_per_month = $expected_amount / $request->loan_term;

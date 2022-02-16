@@ -97,7 +97,8 @@
                         <?php
                             /*calculate the load payment period*/
                            
-                            $period =  CarbonPeriod::create($loan->loan_start_date, '1 month', $loan->loan_end_date);
+                            $period =  CarbonPeriod::create($loan->loan_start_date,'1 month', $loan->loan_end_date, CarbonPeriod::EXCLUDE_END_DATE);
+                            $period->setStartDate($loan->loan_start_date);
                             $period->toArray();
 
                               foreach($period as $date){
