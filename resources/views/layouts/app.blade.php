@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="{{URL::asset('css/style.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{URL::asset('css/styles.css')}}">
 
 		<!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -86,7 +86,7 @@
               <div class="icon">
                 <i class="far fa-user"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{{route('index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -101,7 +101,7 @@
               <div class="icon">
                   <i class="far fa-handshake"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{{route('loans.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -230,24 +230,32 @@
         columns: [
             {data: 'DT_RowIndex', name: 'DT_RowIndex'},
             {data: 'name', name: 'name'},
-            {data: 'email', phone: 'phone'},
+            {data: 'phone', phone: 'phone'},
+            {data: 'location', location: 'location'},
             {data: 'action', name: 'action', orderable: false, searchable: false},
         ]
     });
 
-     var loans_table = $('.loans-table').DataTable({
-        processing: true,
-        serverSide: true,
-        ajax: "{{ route('loans.index') }}",
-        columns: [
+  let loanTable = $('.loans-table').DataTable({
+  processing: true,
+  serverSide: true,
+  ajax:"allloans",
+  columns:[
             {data: 'DT_RowIndex', name: 'DT_RowIndex'},
-            {data: 'name', name: 'name'},
-            {data: 'email', email: 'phone'},
-            {data: 'action', name: 'action', orderable: false, searchable: false},
-        ]
+            {data: 'name', name:'name'},
+            {data: 'created_at', name:'created_at'},
+            {data: 'loan_term', name:'loan_term'},
+            {data: 'loan_interest_rate', name:'loan_interest_rate'},
+            {data: 'payment_per_month', name:'payment_per_month'},
+            {data: 'loan_start_date', name:'loan_start_date'},
+            {data: 'loan_amount', name:'loan_amount'},
+            {data: 'action', name: 'action', orderable: true, searchable: true},
+
+
+  ]
+})    
   });
-    
-  });
+
 </script>
 
 

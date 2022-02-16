@@ -6,15 +6,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Loan;
 use Carbon\Carbon;
+use DataTables;
+
 class LoansController extends Controller
 {
     //
     public function index(Request $request){
-        $loans = DB::table('loans')->get();
-        if($requset->ajax()){
-            
-        }
-        return view('loans.index', ['loans'=>$loans]);
+       
+        return view('loans.index');
     }
     public function store(Request $request){
 
@@ -25,8 +24,9 @@ class LoansController extends Controller
             'loan_start_date'=>'required'
         ]);
 
-        $dt = Carbon::now();
-        $end_loan_date = $dt->addMonth($request->loan_term);
+        $dt = Carbon::now()
+        //get the end date and remove the last month;
+        $end_loan_date = $dt->addMonth($request->loan_term - 1);
         //dd($nextdate);
         $expected_amount = ($request->loan_interest_rate / 100) * ($request->loan_amount) + $request->loan_amount;
         $payment_per_month = $expected_amount / $request->loan_term;
@@ -40,9 +40,23 @@ class LoansController extends Controller
             'loan_end_date'=>$end_loan_date,
             'loan_start_date'=>$request->loan_start_date
         ]);
-
-       
         return redirect()->back()->with('status', 'Loan created');
 
+    }
+
+    public function allLoans(Request $request){
+
+        if($request->ajax()){
+            $loans = DB::table('loans')
+                    ->join('customers', 'loans.customer_id', '=', 'customers.id')->get();
+            return DataTables::of($loans)
+            ->addIndexColumn()
+            ->addColumn('action', function($row){
+                $btn =  '<a href="#" class="btn btn-xs btn-primary mx-2"><i class="fas fa-eye"></i> View </a>';
+                return $btn;
+            })->rawColumns(['action'])
+            ->make(true);
+        }
+ 
     }
 }

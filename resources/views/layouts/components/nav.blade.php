@@ -7,11 +7,18 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
+        <a href="/" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
       </li>
+       <li class="nav-item d-none d-sm-inline-block">
+        <form action="{{route('logout')}}" method="POST">
+          @csrf
+            <button type="submit" class="nav-link btn btn-danger text-white"><i class="fas  fa-power-off"></i></button> 
+        </form>
+      </li>
+
     </ul>
 
     <!-- Right navbar links -->
@@ -37,6 +44,9 @@
           </form>
         </div>
       </li>
+      <!-- logout -->
+
+      <!-- logout -->
 
       <!-- Messages Dropdown Menu -->
       <li class="nav-item dropdown">

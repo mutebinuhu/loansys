@@ -224,7 +224,7 @@
                   </div>
                    <div class="form-group">
                     <label for="phone ">Phone Number</label>
-                    <input type="text" name="phone" class="form-control" id="phone" value="{{$customer->phone}}">
+                    <input type="text" name="phone" class="form-control" id="phone" value="0{{$customer->phone}}">
                   </div>
                  
                  

@@ -26,9 +26,6 @@ class CustomersController extends Controller
                     ->addColumn('action', function($row){
 
                         $btn =  '<a href="customers/'.$row->id.'" class="btn btn-xs btn-primary mx-2"><i class="fas fa-eye"></i> View </a>';
-
-                 
-
                         return $btn;
                     })
                     ->rawColumns(['action'])

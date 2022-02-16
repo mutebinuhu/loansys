@@ -14,12 +14,27 @@ use Illuminate\Support\Facades\Route;
 */
 use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\LoansController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\RegisterController;
+
+
 
 
 Route::get('/', function () {
     return view('layouts.application.index');
-});
-Route::post('loans', [LoansController::class, 'store'])->name('loans.store');
-Route::get('loans', [LoansController::class, 'index'])->name('loans.index');
+})->name('index')->middleware('auth');
+Route::post('loans', [LoansController::class, 'store'])->name('loans.store')->middleware('auth');
+Route::get('loans', [LoansController::class, 'index'])->name('loans.index')->middleware('auth');
+Route::get('/allloans', [LoansController::class, 'allLoans'])->name('loans.allLoans');
+Route::get('/login', [LoginController::class, 'login'])->name('login');
+Route::get('/register', [RegisterController::class, 'create'])->name('register');
+Route::post('/register', [RegisterController::class, 'store'])->name('register');
+
+Route::post('/login', [LoginController::class, 'store'])->name('login');
+Route::post('/post', [LogoutController::class, 'store'])->name('logout');
+
+
+
 
 Route::resource('customers', CustomersController::class);

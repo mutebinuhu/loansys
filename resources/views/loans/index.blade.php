@@ -1,39 +1,35 @@
 @extends('layouts.app');
 @section('content')
-   <div class="table-responsive">
-              <div class="card">
-              <div class="card-header ui-sortable-handle" style="cursor: move;">
-                <h3 class="card-title">
-                  <i class="fas fa-users mr-1"></i>
-                  Loans
-                </h3>
-                <div class="card-tools">
-                  <ul class="nav nav-pills ml-auto">
-                    <li class="nav-item">
-                      <a class="nav-link active" href="#" data-toggle="modal" data-target="#exampleModalCenter" >Add Customer</a>
-                    </li>
-                    
-                  </ul>
-                </div>
-              </div><!-- /.card-header -->
-              <div class="card-body ">
-                <table class="table table-bordered loans-table ">
-                        <thead>
-                            <tr>
-                              <th>Customer</th>
-                              <th>Phone</th>
-                              <th>Loan Amount</th>
-                              <th>Expected Amount</th>
-                              <th>End date</th>
-                              <th width="100px">Action</th>
-                          </tr>
+                
+                <!-- loan details -->
+                <div class="card mb-5">
+                      <div class="card-header">
+                      <h3 class="card-title">Details for loan Released on</h3>
+                     
+                      </div>
+
+                      <div class="card-body table-responsive px-5">
+                       <table class="table table-hover text-nowrap  table-bordered loans-table">
+                      <thead>
+                      <tr>
+                      <th>No</th>
+                      <th>Customer</th>
+                      <th>Created At</th>
+                      <th>Loan Term</th>
+                      <th>Interest</th>
+                      <th>Payment per month</th>
+                      <th>Start date</th>
+                      <th>Loan Amount</th>
+                      <th>Action</th>
+                      </tr>
                       </thead>
                       <tbody>
                       </tbody>
-                  </table>
-              </div><!-- /.card-body -->
-            </div>
-            </div>
+                      </table>
+                      </div>
+
+</div>
+
 
 @endsection
 

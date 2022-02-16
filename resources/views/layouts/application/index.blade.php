@@ -44,6 +44,8 @@
                               <th>No</th>
                               <th>Name</th>
                               <th>Phone</th>
+                              <th>Location</th>
+
                               <th width="100px">Action</th>
                           </tr>
                       </thead>
